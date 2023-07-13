@@ -1,0 +1,17 @@
+
+{% extends 'Blog/base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block title %}Nueva registradas{% endblock %}
+{% block body %}
+<div class="container">
+    <center><h1>¿Que quieres postear hoy?</h1></center>
+    <div class="pt-4">
+        <form action="{% url 'create' %}" method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form layout='horizontal' %}
+            <center><button type="submit" class="btn btn-lg btn-primary fw-bold">Postear</button></center>
+        </form>
+    </div>
+</div>
+{% endblock %}

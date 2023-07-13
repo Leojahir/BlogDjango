@@ -1,0 +1,16 @@
+{% extends 'Blog/base.html' %}
+{% load static %}
+{% block title %}Entradas registradas{% endblock %}
+{% block body %}
+
+    {% if postear %}
+        <ul>
+            {% for dato in postear %}
+            <h1>{{ dato.title }}</h1>
+            <h5>{{ dato.content }}</h5>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <center><h1>Aún no has posteado nada</h1></center>
+    {% endif %}
+{% endblock %}

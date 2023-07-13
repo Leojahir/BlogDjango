@@ -1,0 +1,9 @@
+{% extends 'Blog/base.html' %}
+{% load static %}
+{% block body %}
+<form method="POST" class="pt-5">
+{% csrf_token %}
+{{form}}
+<button type="submit">Registrar</button>
+</from>
+{% endblock body %}
